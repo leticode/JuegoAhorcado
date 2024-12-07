@@ -8,6 +8,7 @@ for (let letra of letras){
     contenedorPrincipal.appendChild(contenedorTeclado);
     let teclado = document.createElement("button");
     teclado.className = "btnTeclado";
+    teclado.textContent = letra;
     contenedorTeclado.appendChild(teclado);
 }
 
