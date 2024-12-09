@@ -1,7 +1,7 @@
 let contenedorTeclado = document.querySelector(".contenedorTeclado");
 let letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "n", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let palabras = ["pepino", "elefante", "libro", "carpeta"];
-let indiceAleatorio = Math.floor(Math.random() * palabras.length);
+let indiceAleatorio = Math.floor(Math.random() * palabras.length); //Elije elemento al azar del array
 let palabra = palabras[indiceAleatorio];
 let letrasPresionadas = [];
 let contenedorPalabra = document.querySelector(".contenedorPalabra");
@@ -26,7 +26,7 @@ for (let letra of letras) {
 function actualizarPalabra() {
     let intento = "";
     for (let letra of palabra) {
-        if (letrasPresionadas.indexOf(letra) != -1){
+        if (letrasPresionadas.indexOf(letra) != -1) { //Se fija si letra ya esta en letra presionada
             intento += letra;
         }
         else{
