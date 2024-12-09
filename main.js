@@ -105,6 +105,9 @@ function mostrarOverlay(texto) {
     let textoOverlay = document.createElement("div");
     textoOverlay.textContent = texto;
     overlay.appendChild(textoOverlay);
+    let caritaFeliz = document.createElement("img");
+    caritaFeliz.src = "img/victory.gif"
+    overlay.appendChild(caritaFeliz);
     let btnOverlay = document.createElement("button");
     btnOverlay.textContent = "Volver a jugar";
     overlay.appendChild(btnOverlay);
