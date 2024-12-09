@@ -110,6 +110,7 @@ function mostrarOverlay(texto, img) {
     imagen.className = "imgGiftCara"
     overlay.appendChild(imagen);
     let btnOverlay = document.createElement("button");
+    btnOverlay.className = "btnOverlay"
     btnOverlay.textContent = "Volver a jugar";
     overlay.appendChild(btnOverlay);
     btnOverlay.addEventListener("click", () => {

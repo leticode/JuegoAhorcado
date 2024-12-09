@@ -28,6 +28,15 @@ body{
     height: 100vh;
 }
 
+.btnOverlay{
+    padding: 5px;
+    margin-top: 20px;
+    background-color: var(--colorPrincipal1);
+    color: var(--colorPrincipal2);
+    border: 2px solid var(--colorSecundario); 
+    border-radius: 5px;
+}
+
 .imgGiftCara{
     width: 200px;
 }
