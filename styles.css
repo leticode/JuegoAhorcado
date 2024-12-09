@@ -23,7 +23,8 @@ body{
     flex-direction: column;
     position: fixed;
     z-index: 1000;
-    background-color:#918f56a3;
+    background-color:#918f56ec;
+    color: var(--colorPrincipal2);
     width: 100vw;
     height: 100vh;
 }
