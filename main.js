@@ -87,7 +87,7 @@ function actualizarPalabraAdivinada() {
     contenedorPalabra.textContent = palabraIntentada;
 
     if (palabraIntentada === palabraQueHayQueAdivinar){
-        mostrarOverlay("Ganaste", "img/victory.gif");
+        mostrarOverlay("GANASTE !", "img/victory.gif");
     }
 }
 function actualizarFallos() {
