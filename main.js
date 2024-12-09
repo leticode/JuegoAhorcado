@@ -1,14 +1,45 @@
-let contenedorPrincipal = document.querySelector(".contenedorPrincipal");
+let contenedorTeclado = document.querySelector(".contenedorTeclado");
+let letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "n", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let palabras = ["pepino", "elefante", "libro", "carpeta"];
+let indiceAleatorio = Math.floor(Math.random() * palabras.length);
+let palabra = palabras[indiceAleatorio];
+let letrasPresionadas = [];
+let contenedorPalabra = document.querySelector(".contenedorPalabra");
 
-let letras = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "n", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-for (let letra of letras){
-    let contenedorTeclado = document.createElement("div");
-    contenedorTeclado.className = "contenedorTeclado";
-    contenedorPrincipal.appendChild(contenedorTeclado);
-    let teclado = document.createElement("button");
-    teclado.className = "btnTeclado";
-    teclado.textContent = letra;
-    contenedorTeclado.appendChild(teclado);
+for (let letra of letras) {
+    let tecla = document.createElement("button");
+    tecla.className = "btnTeclado";
+    tecla.textContent = letra;
+    contenedorTeclado.appendChild(tecla);
+    tecla.addEventListener("click", () => {
+        if(tecla.className == "btnTeclado"){
+            letrasPresionadas.push(letra);
+            tecla.className = "presionada";
+            actualizarPalabra();
+            console.log(letra);
+        }
+    });
 }
+
+
+
+function actualizarPalabra() {
+    let intento = "";
+    for (let letra of palabra) {
+        if (letrasPresionadas.indexOf(letra) != -1){
+            intento += letra;
+        }
+        else{
+            intento += "_";
+        }
+    }
+    contenedorPalabra.textContent =  intento;
+
+    if (intento === palabra){
+        alert("ganaste");
+    }
+}
+
+
+actualizarPalabra();
 

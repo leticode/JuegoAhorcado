@@ -5,13 +5,37 @@
 }
 
 .contenedorPrincipal{
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.contenedorTeclado{
-    display: grid;
+.contenedorPalabra{
+    margin-bottom: 30px;
+    letter-spacing: 10px;
 }
+
+.contenedorTeclado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    width: 400px;
+}
+
+.contenedorTeclado button {
+    flex: 0 0 calc(100% / 9 - 4px);
+    max-width: calc(100% / 9 - 4px);
+}
+
 
 .btnTeclado{
-
+    background-color: aqua;
 }
+
+.presionada{
+    background-color: blue;
+}
+
