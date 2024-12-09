@@ -24,10 +24,6 @@ body{
     width: 200px;
 }
 
-.palabraElegida{
-    
-}
-
 .contenedorPrincipal{
     height: 100vh;
     margin: 0 20px;
@@ -35,6 +31,11 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.contenedorGrid{
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .contenedorPalabra{
@@ -73,5 +74,21 @@ body{
 .presionada{
     background-color: #705e76;
     border: none;
+}
+
+@media (min-width: 768px){  
+    .contenedorGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contenedorDerecha{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
 }
 
