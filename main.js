@@ -1,6 +1,6 @@
 let palabras = [
     { nombre: "Tigre", descripcion: "Un felino enigmático, símbolo de poder y agilidad" },
-    { nombre: "Jifafa", descripcion: "Una figura elegante que observa el mundo desde las alturas" },
+    { nombre: "Jirafa", descripcion: "Una figura elegante que observa el mundo desde las alturas" },
     { nombre: "Delfin", descripcion: "Un viajero del mar, conocido por su curiosidad" },
     { nombre: "Elefante", descripcion: "El gigante terrestre con una memoria excepcional" },
     { nombre: "Canguro", descripcion: "Un saltador incansable que lleva su hogar consigo" },
