@@ -4,6 +4,9 @@ let ayuda = palabraElegida.descripcion;
 let ayudaPalabra = document.querySelector(".ayudaPalabra");
 ayudaPalabra.textContent = ayuda;
 let letrasPresionadas = [];
+let fallos = 0;
+const maximoDeFallos = 6;
+actualizarFallos();
 crearTeclado();
 actualizarPalabraAdivinada();
 
@@ -53,9 +56,16 @@ function crearTeclado() {
         tecla.textContent = letra;
         contenedorTeclado.appendChild(tecla);
         tecla.addEventListener("click", () => {
-            if(tecla.className == "btnTeclado"){
+            if(tecla.className == "btnTeclado" && fallos <= maximoDeFallos) {
                 letrasPresionadas.push(letra);
                 tecla.className = "presionada";
+                if (palabraQueHayQueAdivinar.toLocaleLowerCase().includes(letra) === false) {
+                    fallos++;
+                    actualizarFallos(); 
+                    if (fallos > maximoDeFallos) {
+                        alert("perdiste");
+                    }
+                }
                 actualizarPalabraAdivinada();
             }
         });
@@ -66,7 +76,7 @@ function crearTeclado() {
 function actualizarPalabraAdivinada() {
     let palabraIntentada = "";
     for (let letra of palabraQueHayQueAdivinar) {
-        if (letrasPresionadas.indexOf(letra.toLowerCase()) != -1) { //Se fija si letra ya esta en letra presionada
+        if (letrasPresionadas.includes(letra.toLowerCase())) { // Se fija si letra ya esta en letra presionada
             palabraIntentada += letra;
         }
         else{
@@ -78,6 +88,14 @@ function actualizarPalabraAdivinada() {
 
     if (palabraIntentada === palabraQueHayQueAdivinar){
         alert("ganaste");
+    }
+}
+function actualizarFallos() {
+    let contenedorFallos = document.querySelector(".contenedorFallos");
+    contenedorFallos.textContent = "Fallos: " + fallos + " / " + (maximoDeFallos + 1);
+    let hangmanImg = document.querySelector("#hangmanImg");
+    if (fallos <= maximoDeFallos) {
+        hangmanImg.src = "img/hangman-" + fallos + ".svg" ;
     }
 }
 
