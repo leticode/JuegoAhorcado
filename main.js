@@ -63,7 +63,7 @@ function crearTeclado() {
                     fallos++;
                     actualizarFallos(); 
                     if (fallos > maximoDeFallos) {
-                        mostrarOverlay("PERDISTE " + " la palabra era : " + palabraQueHayQueAdivinar);
+                        mostrarOverlay("PERDISTE " + " la palabra era : " + palabraQueHayQueAdivinar, "img/lost.gif");
                     }
                 }
                 actualizarPalabraAdivinada();
@@ -87,7 +87,7 @@ function actualizarPalabraAdivinada() {
     contenedorPalabra.textContent = palabraIntentada;
 
     if (palabraIntentada === palabraQueHayQueAdivinar){
-        mostrarOverlay("Ganaste");
+        mostrarOverlay("Ganaste", "img/victory.gif");
     }
 }
 function actualizarFallos() {
@@ -99,15 +99,16 @@ function actualizarFallos() {
     }
 }
 
-function mostrarOverlay(texto) {
+function mostrarOverlay(texto, img) {
     let overlay = document.querySelector(".overlay");
     overlay.style.display = "flex";
     let textoOverlay = document.createElement("div");
     textoOverlay.textContent = texto;
     overlay.appendChild(textoOverlay);
-    let caritaFeliz = document.createElement("img");
-    caritaFeliz.src = "img/victory.gif"
-    overlay.appendChild(caritaFeliz);
+    let imagen = document.createElement("img");
+    imagen.src = img;
+    imagen.className = "imgGiftCara"
+    overlay.appendChild(imagen);
     let btnOverlay = document.createElement("button");
     btnOverlay.textContent = "Volver a jugar";
     overlay.appendChild(btnOverlay);
@@ -115,4 +116,5 @@ function mostrarOverlay(texto) {
         location.reload();
     })
 }
+
 
