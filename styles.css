@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+.overlay{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(190, 222, 222, 0.668);
+    width: 100vw;
+    height: 100vh;
+}
 
 .contenedorPrincipal{
     height: 100vh;

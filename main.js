@@ -63,7 +63,7 @@ function crearTeclado() {
                     fallos++;
                     actualizarFallos(); 
                     if (fallos > maximoDeFallos) {
-                        alert("perdiste");
+                        mostrarOverlay("PERDISTE " + " la palabra era : " + palabraQueHayQueAdivinar);
                     }
                 }
                 actualizarPalabraAdivinada();
@@ -87,7 +87,7 @@ function actualizarPalabraAdivinada() {
     contenedorPalabra.textContent = palabraIntentada;
 
     if (palabraIntentada === palabraQueHayQueAdivinar){
-        alert("ganaste");
+        mostrarOverlay("Ganaste");
     }
 }
 function actualizarFallos() {
@@ -97,5 +97,19 @@ function actualizarFallos() {
     if (fallos <= maximoDeFallos) {
         hangmanImg.src = "img/hangman-" + fallos + ".svg" ;
     }
+}
+
+function mostrarOverlay(texto) {
+    let overlay = document.querySelector(".overlay");
+    overlay.style.display = "flex";
+    let textoOverlay = document.createElement("div");
+    textoOverlay.textContent = texto;
+    overlay.appendChild(textoOverlay);
+    let btnOverlay = document.createElement("button");
+    btnOverlay.textContent = "Volver a jugar";
+    overlay.appendChild(btnOverlay);
+    btnOverlay.addEventListener("click", () => {
+        location.reload();
+    })
 }
 
