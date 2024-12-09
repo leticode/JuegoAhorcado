@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .contenedorPrincipal{
     height: 100vh;
     display: flex;
@@ -15,8 +16,13 @@
 .contenedorPalabra{
     margin-bottom: 30px;
     letter-spacing: 10px;
+    font-weight: 600;
 }
-
+.ayudaPalabra{
+    font-weight: 600;
+    font-size: .9rem;
+    margin: 10px 0 20px 0;
+}
 .contenedorTeclado {
     display: flex;
     flex-wrap: wrap;
