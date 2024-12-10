@@ -1,19 +1,21 @@
 :root{
     --centrarTexto: center;
-    --colorPrincipal1: #d9d17d;
-    --colorPrincipal2: #332d14;
-    --colorSecundario: #918f56;
-    --colorAcentuado: #5f5b30;
+    --colorTexto: #edf1fd;
+    --colorTexto2 : #82a0eb ;
+    --colorSecundario:#213f88;
+    --colorAcentuado: #4371e4 ;
+    --textoGrande : 1.5rem;
 }
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Fredoka", sans-serif;
 }
 
 body{
-    background-color: var(--colorPrincipal1);
+    background: linear-gradient(220.55deg, #4063BC 0%, #6B0013 100%);
 }
 
 .overlay{
@@ -23,8 +25,10 @@ body{
     flex-direction: column;
     position: fixed;
     z-index: 1000;
-    background-color:#918f56ec;
-    color: var(--colorPrincipal2);
+    top: 0;
+    left: 0;
+    background-color:#000000da;
+    color: var(--colorTexto);
     width: 100vw;
     height: 100vh;
 }
@@ -32,9 +36,9 @@ body{
 .btnOverlay{
     padding: 5px;
     margin-top: 20px;
-    background-color: var(--colorPrincipal1);
-    color: var(--colorPrincipal2);
-    border: 2px solid var(--colorSecundario); 
+    background-color: var(--colorSecundario);
+    color: var(--colorTexto);
+    border: 2px solid var(--colorAcentuado); 
     border-radius: 5px;
 }
 
@@ -44,39 +48,52 @@ body{
 
 .contenedorPrincipal{
     height: 100vh;
-    margin: 0 20px;
+    margin-top:20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     color: var(--colorPrincipal2);
 }
 
 .contenedorGrid{
     display: grid;
     grid-template-columns: 1fr;
-    place-items: center; 
+    place-items: center;
+}
+
+#hangmanImg {
+    max-height: 40vh;
+}
+
+.contenedorDerecha{
+    background-color: #00000074;
+    padding: 20px 5px;
+    margin: 20px 5px 0px 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .contenedorPalabra{
-    margin-bottom: 30px;
     letter-spacing: 10px;
     font-weight: 600;
     text-align: center;
+    font-size: var(--textoGrande);
+    color: var(--colorTexto);
 }
 
+
 .contenedorFallos{
-    color: var(--color);
     font-weight: 600;
     display: flex;
     justify-content: center;
-    color: var(--colorPrincipal2);
+    color: var(--colorSecundario);
 }
 .ayudaPalabra{
-    font-weight: 600;
-    font-size: .9rem;
-    margin: 10px 0 20px 0;
-    color: var(--colorPrincipal2);
+    font-weight: 400;
+    color: var(--colorTexto);
     text-align: center;
 }
 
@@ -86,7 +103,8 @@ body{
     flex-wrap: wrap;
     gap: 4px;
     justify-content: center;
-    width: 350px;
+    width: 95%;
+    max-width: 350px;
     text-align: center;
 }
 
@@ -98,27 +116,37 @@ body{
 
 .btnTeclado{
     background-color: var(--colorSecundario);
-    color: var(--colorPrincipal2);
+    color: var(--colorTexto);
     border: none;
+    font-size: var(--textoGrande);
+    border-radius: 5px;
 }
 
 .presionada{
     background-color: var(--colorAcentuado);
     border: none;
-    color: var(--colorPrincipal2);
+    color: var(--colorTexto);
+    font-size: var(--textoGrande);
+    border-radius: 5px;
 }
 
 @media (min-width: 768px){  
+
+    .contenedorPrincipal{
+        margin: 0 20px;
+        justify-content: center;
+    }
     .contenedorGrid{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    #hangmanImg {
+        max-height: 80vh;
+    }
     
     .contenedorDerecha{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        margin-top: 0px;
     }
 
     .contenedorTeclado{
