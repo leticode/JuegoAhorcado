@@ -51,16 +51,16 @@ function elegirPalabra() {
         { nombre: "Tristeza", descripcion: "La sombra que se posa en el corazón" },
         { nombre: "Paciencia", descripcion: "La calma que se encuentra en la espera" },
         { nombre: "Neurona", descripcion: "Célula del sistema nervioso encargada de transmitir impulsos eléctricos" },
-        { nombre: "Páncreas", descripcion: "Órgano que se encuentra detrás del estómago y produce enzimas digestivas y hormonas, como la insulina" },
+        { nombre: "Pancreas", descripcion: "Órgano que se encuentra detrás del estómago y produce enzimas digestivas y hormonas, como la insulina" },
         { nombre: "Hígado", descripcion: "Órgano vital que se encarga de metabolizar sustancias y producir bilis para la digestión" },
         { nombre: "Aorta", descripcion: "La arteria principal que transporta sangre oxigenada desde el corazón hacia el resto del cuerpo" },
-        { nombre: "Tráquea", descripcion: "Conducto respiratorio que conecta la laringe con los pulmones" },
-        { nombre: "Vena cava", descripcion: "Vena que transporta la sangre desoxigenada desde el cuerpo de vuelta al corazón" },
+        { nombre: "Traquea", descripcion: "Conducto respiratorio que conecta la laringe con los pulmones" },
+        { nombre: "Venacava", descripcion: "Vena que transporta la sangre desoxigenada desde el cuerpo de vuelta al corazón" },
         { nombre: "Tibia", descripcion: "Hueso largo de la pierna que se encuentra en la parte inferior, entre la rodilla y el tobillo" },
         { nombre: "Sutil", descripcion: "Que es tan delicado o fino que casi no puede ser percibido" },
         { nombre: "Sereno", descripcion: "Que es tranquilo o calmado, especialmente en medio de situaciones tensas o desordenadas" },
-        { nombre: "Efímero", descripcion: "Que tiene una duración muy corta, que desaparece rápidamente" },
-        { nombre: "Frágil", descripcion: "Que es débil o vulnerable, fácil de romper o dañar" },
+        { nombre: "Efimero", descripcion: "Que tiene una duración muy corta, que desaparece rápidamente" },
+        { nombre: "Fragil", descripcion: "Que es débil o vulnerable, fácil de romper o dañar" },
         { nombre: "Saxo", descripcion: "Instrumento de viento hecho de metal, usado en la música jazz y clásica" },
         { nombre: "Violin", descripcion: "Instrumento musical de cuerdas que se toca con un arco" },
         { nombre: "Redes", descripcion: "Conexiones entre dispositivos que permiten la transmisión de datos y la comunicación" },
@@ -70,8 +70,6 @@ function elegirPalabra() {
         { nombre: "Ingeniero", descripcion: "Diseña soluciones técnicas usando ciencia y matemáticas." },
         { nombre: "Profesor", descripcion: "Guía del conocimiento que siembra ideas, habilidades y valores" },
         { nombre: "Arquitecto", descripcion: "Creador de espacios funcionales y estéticamente agradables" }
-
-    
     ];
     let indiceAleatorio = Math.floor(Math.random() * palabras.length); //Elije elemento al azar del array
     let objetoPalabra = palabras[indiceAleatorio]; 
